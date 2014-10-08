@@ -44,25 +44,15 @@ exports.uidLight = function(len) {
  * @api private
  */
 exports.unique_token = function() {
-    //Generate
-    var uid = exports.uid(16),
-        uid2 = exports.uid(16),
-        uid3 = exports.uid(16),
-        uid4 = exports.uid(16),
-        uid5 = exports.uid(16),
-        uid6 = exports.uid(16),
-        uid7 = exports.uid(16),
-        uid8 = exports.uid(16),
-        uid9 = exports.uid(16),
-        uid10 = exports.uid(16),
-        uid11 = exports.uid(16),
-        uid12 = exports.uid(16),
-        uid13 = exports.uid(16),
-        uid14 = exports.uid(16),
-        uid15 = exports.uid(16),
-        uid16 = exports.uid(16),
-        access_token = uid16 + uid15 + uid14 + uid13 + uid12 + uid11 + uid10 + uid9 + uid8 + uid7 + uid6 + uid5 + uid4 + uid3 + uid2 + uid;
-        return access_token;
+  //Generate
+  var uid = [];
+  for (var i = 0; i < 16; ++i) {
+    uid.push(exports.uid(16));
+  }
+
+  uid.reverse();
+
+  return uid.join('');
 };
 
 /**
